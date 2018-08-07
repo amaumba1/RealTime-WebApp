@@ -32,7 +32,9 @@ class SignUpForm extends Component {
     }
 
     onSubmit = (event) => {
-        const { username, email, passwordOne, history } = this.state; 
+        const { username, email, passwordOne } = this.state; 
+        const { history } = this.props; 
+        
         auth.doCreateUserWithEmailAndPassword(email, passwordOne)
             .then(authUser => {
                 this.setState({ ...INITIAL_STATE })
