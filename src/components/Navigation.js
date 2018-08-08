@@ -10,21 +10,22 @@ const Navigation = ({ authUser}) =>
     </div>
 
 const NavigationAuth = () => 
-    <div>
-        <ul>
-            <li><Link to={routes.LANDING}>Landing</Link></li>
-            <li><Link to={routes.HOME}>Home</Link></li> 
-            <li><Link to={routes.ACCOUNT}>Account</Link></li>
-            <li><SignOutButton /></li>
-        </ul>
-    </div>
+    <nav className="navbar navbar-light sm-light">
+        <a className="navbar-brand"><Link to={routes.HOME}>Home</Link></a>
+        <a className="navbar-brand"><Link to={routes.LANDING}>Landing</Link></a>
+        <a className="navbar-brand"><Link to={routes.ACCOUNT}>Account</Link></a>
+        <a className="navbar-brand"><SignOutButton /></a> 
+            
+</nav>
+
+
+    
 
 const NavigationNonAuth = () => 
-    <div>
-        <ul>
-            <li><Link to={routes.LANDING}>Landing</Link></li>
-            <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
+        <ul className="nav justify-content-end">
+            <li className="nav-item"><Link to={routes.LANDING}>Landing</Link></li>
+            <li className="nav-item"><Link to={routes.SIGN_IN}>Sign In</Link></li>
         </ul>
-    </div>
+    
 
 export default Navigation; 
