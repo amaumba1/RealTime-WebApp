@@ -1,5 +1,4 @@
 import React from 'react';
-import { firebase } from '../firebase'; 
 import { BrowserRouter as Router, Route } from 'react-router-dom'; 
 
 import Navigation from './Navigation'; 
@@ -12,25 +11,13 @@ import AccountPage from './Account';
 
 import * as routes from '../constants/routes'; 
 
-class App extends React.Component {
-  constructor(props) {
-    super(props)
+import withAuthentication from './withAuthentication'; 
 
-    this.state = {
-      authUser: null
-    }
-  }
+const App = () => 
 
-  componentDidMount() {
-    firebase.auth.onAuthStateChanged(authUser => {
-      authUser ? this.setState({ authUser }) : this.setState({ authUser: null})
-    })
-  }
-  render() {
-    return (
       <Router>
         <div>
-          <Navigation authUser={this.state.authUser}/>
+          <Navigation />
           <hr />
 
           <Route
@@ -59,8 +46,5 @@ class App extends React.Component {
 
         </div>
       </Router>
-    )
-  }
-}
 
-export default App; 
+export default withAuthentication(App); 
