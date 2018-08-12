@@ -32,10 +32,10 @@ class SignUpForm extends Component {
     }
 
     onSubmit = (event) => {
-        const { username, email, passwordOne } = this.state; 
+        const { email, passwordOne } = this.state; 
         const { history } = this.props; 
 
-        auth.doCreateUserWithEmailAndPassword(username, email, passwordOne)
+        auth.doCreateUserWithEmailAndPassword( email, passwordOne)
             .then(() => {
                 this.setState({ ...INITIAL_STATE })
                 history.push(routes.HOME)

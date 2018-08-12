@@ -4,12 +4,12 @@ import { PasswordForgetForm } from './PasswordForget';
 import PasswordChangeForm from './PasswordChange';
 const AccountPage = () =>
     <AuthUserContext.Consumer>
-        {authUser => authUser ?
+        {authUser => authUser &&
             <div>
                 <h1>Account:</h1>
                 <PasswordForgetForm />
                 <PasswordChangeForm />
-            </div> : null
+            </div> 
         }
     </AuthUserContext.Consumer>
 export default AccountPage;
