@@ -3,12 +3,14 @@ import {PropTypes} from 'prop-types';
 
 class ChannelForm extends Component {
 
-    onSubmit = (e) => {
-        e.preventDefault();
+    onSubmit = (event) => {
+    
         const node = this.refs.channel;
         const channelName = node.value;
         this.props.addChannel(channelName)
         node.value = ''
+
+        event.preventDefault();
     }
 
     render() {
