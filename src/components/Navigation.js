@@ -16,8 +16,8 @@ const NavigationAuth = () =>
         <a className="navbar-brand"><Link to={routes.HOME}>Home</Link></a>
         <a className="navbar-brand"><Link to={routes.LANDING}>Landing</Link></a>
         <a className="navbar-brand"><Link to={routes.ACCOUNT}>Account</Link></a>
-        <a className="navbar-brand"><SignOutButton /></a> 
-            
+        <a className="navbar-brand"><Link to={routes.ADMIN}>Admin</Link></a>
+        <a className="navbar-brand"><SignOutButton /></a>             
 </nav>
 
 const NavigationNonAuth = () => 

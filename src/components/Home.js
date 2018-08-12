@@ -4,7 +4,9 @@ import UserSection from './users/UserSection';
 import MessageSection from './messages/MessageSection';
 
 
+
 import withAuthorization from './withAuthorization'; 
+//import { db } from '../firebase'; 
 
 import '../App.css';
 
@@ -110,5 +112,7 @@ class HomePage extends Component {
         )
     }
 }
+
+//const authCondition = (authUser) => !!authUser; 
 
 export default withAuthorization(authCondition)(HomePage); 
