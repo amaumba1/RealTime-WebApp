@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import ChannelSection from './channels/ChannelSection';
-import UserSection from './users/UserSection';
-import MessageSection from './messages/MessageSection';
+import ChannelSection from '../channels/ChannelSection';
+import UserSection from '../users/UserSection';
+import MessageSection from '../messages/MessageSection';
 
 
 
-import withAuthorization from './withAuthorization'; 
+import withAuthorization from '../auth/withAuthorization'; 
 //import { db } from '../firebase'; 
 
 import '../App.css';

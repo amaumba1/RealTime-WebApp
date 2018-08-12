@@ -1,8 +1,8 @@
 import React from 'react';
 
-import AuthUserContext from './AuthUserContext';
-import withAuthorization from './withAuthorization';
-import { db } from '../firebase'; 
+import AuthUserContext from '../auth/AuthUserContext';
+import withAuthorization from '../auth/withAuthorization';
+import { db } from '../../firebase'; 
 //import UserList from './users/UserList';
 
 const AdminPage = () => (Component) => 
