@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import ChannelSection from './channels/ChannelSection';
 import UserSection from './users/UserSection';
 import MessageSection from './messages/MessageSection';
+
+
+import withAuthorization from './withAuthorization'; 
+
 import '../App.css';
+
+const authCondition = (authUser) => !authUser; 
 
 class HomePage extends Component {
     constructor(props) {
@@ -105,4 +111,4 @@ class HomePage extends Component {
     }
 }
 
-export default HomePage; 
+export default withAuthorization(authCondition)(HomePage); 
