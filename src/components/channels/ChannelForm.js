@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import {PropTypes} from 'prop-types';
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 
 class ChannelForm extends Component {
 
     onSubmit = (event) => {
-    
+
         const node = this.refs.channel;
         const channelName = node.value;
         this.props.addChannel(channelName)

@@ -17,7 +17,6 @@ class Channel extends Component {
                 <a 
                     value={channel}
                     onClick={this.onClick}
-                    //onChange={event => this.setState(event.target.value)}
                 >
                     {channel.name} 
                 </a>
