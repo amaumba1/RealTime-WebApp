@@ -91,8 +91,8 @@ class HomePage extends Component {
 
     render() {
         return (
-            <div className='app'>
-                <div className='nav'>
+            <div>
+                <div>
                     <ChannelSection
                         {...this.state}
                         addChannel={this.addChannel}

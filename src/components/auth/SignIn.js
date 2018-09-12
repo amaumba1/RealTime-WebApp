@@ -1,8 +1,5 @@
 import { withRouter } from 'react-router-dom';
 import React, { Component } from 'react';
-import { Form, FormGroup, Col, Modal, 
-    ControlLabel, FormControl, 
-    Checkbox, Button } from 'react-bootstrap';
 
 import { SignUpLink } from './SignUp'; 
 import {PasswordForgetLink } from './PasswordForget'; 
@@ -12,18 +9,12 @@ import * as routes from '../../constants/routes';
 
 const SignInPage = ({ history}) =>
        <div>
-        <div className="static-modal">
-            <Modal.Dialog>
-            <Modal.Header>
-                <Modal.Title>Real Time Chat for All </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
+            <div>
+                <div>Real Time Chat for All </div>
                 <SignInForm history={history} /> 
                 <PasswordForgetLink /> 
                 <SignUpLink />
-            </Modal.Body>
-            </Modal.Dialog>
-        </div>
+            </div>
         </div>
 
 
@@ -64,47 +55,43 @@ class SignInForm extends Component {
         const isInvalid = password === '' || email === '';
         return (
         
-            <Form horizontal onSubmit={this.onSubmit}>
-                <FormGroup controlId="formHorizontalEmail">
-                    <Col componentClass={ControlLabel} sm={2}>
+            <form onSubmit={this.onSubmit}>
+                <div>
+                    <div>
                         Email
-                    </Col>
-                    <Col sm={3}>
-                        <FormControl 
+                    </div>
+                    <div>
+                        <input 
                             value={email}
                             onChange={(event) => this.setState(byPropKey('email', event.target.value))}
                             type='text'
                             placeholder='Email Address' 
                         />
-                    </Col>    
-                </FormGroup>
+                    </div>    
+                </div>
                 
-                 <FormGroup controlId="formHorizontalPassword">
-                    <Col componentClass={ControlLabel} sm={2}>
+                 <div>
+                    <div>
                         Password
-                    </Col>
-                    <Col sm={3}>
-                        <FormControl 
+                    </div>
+                    <div>
+                        <input 
                             value={password}
                             onChange={(event) => this.setState(byPropKey('password', event.target.value))}   
                             type="password" placeholder="Password" 
                             />
-                    </Col>
-                </FormGroup>
+                    </div>
+                </div>
                 
-                <FormGroup>
-                    <Col smOffset={2} sm={10}>
-                        <Checkbox>Remember me</Checkbox>
-                    </Col>
-                </FormGroup>
+                <div>
+                    <checkbox>Remember me</checkbox>
+                </div>
 
-                <FormGroup>
-                    <Col smOffset={2} sm={10}>
-                        <Button  disabled={isInvalid} type="submit">Sign in</Button>
-                        {error && <p>{error.message}</p>}
-                    </Col>
-                </FormGroup>   
-            </Form>
+                <div>
+                    <button  disabled={isInvalid} type="submit">Sign in</button>
+                    {error && <p>{error.message}</p>}
+                </div>   
+            </form>
         )
     }
 }
